@@ -23,7 +23,7 @@ public class IngList {
     }
 
     
-    //This method returns index if it's given the item ID; useful only for RECIPE
+    //This method returns index if it's given the item ID; useful only for STOCK
     public int indexOfID(int itemid){
         ListIterator<Ingredient> iterate = list.listIterator();
         while(iterate.hasNext()){
@@ -115,14 +115,14 @@ public class IngList {
     		int i=0;
             while(aux!=0){
             	double dummy=iterate.next().qte;
-            	System.out.println("Value we will detract from:"+dummy);
+            	//System.out.println("Value we will detract from:"+dummy);
             	
             	if(dummy<=aux) {
-            		System.out.println("CASE "+dummy+" < "+aux);
-            		System.out.println("Reduce now by:"+dummy);
+            		//System.out.println("CASE "+dummy+" < "+aux);
+            		//System.out.println("Reduce now by:"+dummy);
             		aux-=iterate.previous().qte;
             		this.total-=dummy;
-            		System.out.println("Remaining to be reduced:"+aux);
+            		//System.out.println("Remaining to be reduced:"+aux);
             		
             		iterate.next();
             		i++;
@@ -135,7 +135,7 @@ public class IngList {
             	
             }
             for(;i>0;i--) {
-            	System.out.println("Reduce now by:"+aux);
+            	//System.out.println("Reduce now by:"+aux);
             	this.list.remove();
             }
     	}

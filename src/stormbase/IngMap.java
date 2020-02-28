@@ -91,6 +91,7 @@ public class IngMap {
 		public void useIng(String name,double qte, String measure) {
 			if(ingmap.containsKey(name)) {
 				double aux = this.checkMeasurement(qte, measure, name); //this is corrected quantity if conversion is necessary
+				System.out.println("Using "+aux+" "+measure+" of "+name);
 				ingmap.get(name).use(aux);
 			}
 			else {
